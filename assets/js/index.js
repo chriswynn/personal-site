@@ -1,1 +1,3 @@
-console.log('you can use ES6 here : )')
+import colorPicker from './modules/color'
+
+colorPicker()

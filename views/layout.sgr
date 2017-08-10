@@ -15,6 +15,7 @@ html
   body
     header
       This is header
+    div(id='color-picker')
     main(role='main' id='{{ pageId }}')
       block(name='content')
 
