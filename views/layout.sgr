@@ -13,6 +13,8 @@ html
     link(rel='stylesheet' href='css/index.css')
 
   body
+    header
+      This is header
     main(role='main' id='{{ pageId }}')
       block(name='content')
 

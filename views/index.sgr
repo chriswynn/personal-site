@@ -1,2 +1,4 @@
 extends(src='layout.sgr')
   block(name='content')
+    section(id='welcome')
+    section(id='projects')
