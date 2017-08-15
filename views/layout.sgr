@@ -13,11 +13,8 @@ html
     link(rel='stylesheet' href='css/index.css')
 
   body
-    header
-      This is header
     div(id='color-picker')
     main(role='main' id='{{ pageId }}')
       block(name='content')
-
     block(name='javascript')
       script(src='js/main.js' defer)
