@@ -1,6 +1,6 @@
 import ColorPicker from 'simple-color-picker'
 const colorPicker = new ColorPicker({
-  color: '#9c2525',
+  color: '#259c71',
   background: '#454545',
   width: 500,
   height: window.innerHeight
