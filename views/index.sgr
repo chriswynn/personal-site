@@ -22,5 +22,10 @@ extends(src='layout.sgr')
           h1 N
       div(class='message')
         h2 Howdy! I'm a Creative that Specializes in Front-End Development & Design
-    section(id='projects')
+    section(id='projects' class='wrapper')
       h2 Check Out Some of My Projects
+      div(class='project')
+        div(class='overlay')
+      div(class='project')
+        div(class='overlay')
+

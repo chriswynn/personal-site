@@ -1,4 +1,17 @@
 #projects
   & h2
     text-align: center
-
+  & .project
+    background-image: url('../img/aquamotion.png')
+    background-size: cover
+    clip-path: polygon(50% 0%, 0 69%, 100% 100%)
+    height: 600px
+    width: 600px
+    & .overlay
+      height: 100%
+      mix-blend-mode: screen
+      width: 100%
+    &:nth-child(3)
+      background-image: url('../img/hcsc.jpg')
+      clip-path: circle(50% at 50% 50%)
+      transform: translateX(700px)

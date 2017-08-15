@@ -33,7 +33,11 @@ export default function colors() {
     const compliment = invertColor(hexStringColor)
     const gradientSelector = document.querySelector('.lockup')
     const gradientBg = `linear-gradient(10deg, rgba(0,0,0,0), ${compliment})`
+    const projects = document.querySelectorAll('.overlay')
     document.body.setAttribute('style', `background: ${hexStringColor};` )
     gradientSelector.setAttribute('style', `background: ${gradientBg};` )
+    for(var i = 0; i < projects.length; i++) {
+      projects[i].setAttribute('style', `background: ${compliment};`)
+    }
   })
 }
