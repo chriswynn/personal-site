@@ -4,14 +4,15 @@
   & .project-wrapper
     position: relative
   & .project-wrapper:hover
+    & .project-title
+      border-bottom: 25px solid #fff
+      transform: skew(10deg)
     & .project
       clip-path: polygon(50% 0%, 0 100%, 100% 60%)
     & .project-two
-      clip-path: circle(50% at 70% 50%)
+      clip-path: circle(45% at 70% 50%)
     & .overlay
       opacity: .6
-    & .project-title
-      border-bottom: 25px solid #fff
   & .project-title
     left: 200px
     position: absolute
@@ -19,6 +20,7 @@
     transition: .3s ease
   & .project
     background-image: url('../img/aquamotion.png')
+    //background-size: cover
     background-size: cover
     clip-path: polygon(50% 0%, 0 69%, 100% 100%)
     height: 600px
