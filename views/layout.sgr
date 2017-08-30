@@ -14,6 +14,28 @@ html
 
   body
     div(id='color-picker')
+    section(id='welcome' class='wrapper')
+      div(class='lockup')
+        div(class='block')
+          h1 C
+        div(class='block')
+          h1 H
+        div(class='block')
+          h1 R
+        div(class='block')
+          h1 I
+        div(class='block')
+          h1 S
+        div(class='block')
+          h1 W
+        div(class='block')
+          h1 Y
+        div(class='block')
+          h1 N
+        div(class='block')
+          h1 N
+      div(class='message')
+        h2 Howdy! I'm a Creative that Specializes in Front-End Development & Design
     main(role='main' id='{{ pageId }}')
       block(name='content')
     block(name='javascript')
