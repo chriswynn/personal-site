@@ -1,13 +1,35 @@
 extends(src='layout.sgr')
   block(name='content')
+    section(id='welcome' class='wrapper')
+      div(class='lockup')
+        div(class='block')
+          h1 C
+        div(class='block')
+          h1 H
+        div(class='block')
+          h1 R
+        div(class='block')
+          h1 I
+        div(class='block')
+          h1 S
+        div(class='block')
+          h1 W
+        div(class='block')
+          h1 Y
+        div(class='block')
+          h1 N
+        div(class='block')
+          h1 N
+      div(class='message')
+        h2 Howdy! I'm a Creative that Specializes in Front-End Development & Design
     section(id='projects' class='wrapper')
       h2 My Projects
-      a(href='#')
+      a(href='/aquamotion')
         div(class='project-wrapper')
           div(class='project')
             div(class='overlay')
           h1(class='project-title') Aquamotion
-      a(href='#')
+      a(href='/hcsc')
         div(class='project-wrapper')
           div(class='project project-two')
             div(class='overlay')
