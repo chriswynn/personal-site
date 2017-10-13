@@ -4,3 +4,15 @@ extends(src='layout.sgr')
       h1 Howdy I'm Chris Wynn
       h2 A Creative Front-End Developer and Designer
     section(class='projects')
+      h2 MY WORK
+      a(href='/aquamotion')
+        div(class='project-row')
+          div(class='project')
+          div(class='project-title')
+            h1 Aquamotion HVAC
+      a(href='/hcsc')
+        div(class='project-row')
+          div(class='project-title')
+            h1 HCSC
+          div(class='project')
+
