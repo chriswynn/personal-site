@@ -9,6 +9,7 @@
   "bugs": "https://github.com/chriswynn/personal-site/issues",
   "dependencies": {
     "reshape-standard": "^3.0.0",
+    "siema": "^1.4.6",
     "simple-color-picker": "^0.1.2",
     "spike": "^2.0.0",
     "spike-css-standards": "^3.0.0",
