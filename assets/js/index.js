@@ -1,3 +1,3 @@
-import colorPicker from './modules/color'
+import Models from './modules/models'
 
-colorPicker()
+Models()
