@@ -7,6 +7,7 @@ extends(src='layout.sgr')
       a(href='/aquamotion')
         div(class='project-row')
           div(class='project')
+            div(class='overlay')
           div(class='project-title')
             h1 Aquamotion HVAC
       a(href='/hcsc')
@@ -14,4 +15,4 @@ extends(src='layout.sgr')
           div(class='project-title')
             h1 HCSC
           div(class='project')
-
+            div(class='overlay')
