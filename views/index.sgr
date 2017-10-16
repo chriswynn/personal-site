@@ -1,8 +1,7 @@
 extends(src='layout.sgr')
   block(name='content')
     section(class='hero')
-      h1 Howdy I'm Chris Wynn
-      h2 A Creative Front-End Developer and Designer
+      h1 Howdy I'm Chris Wynn A Creative Front End Developer Based Out of Providence, Rhode Island
     section(class='projects')
       h2 MY WORK
       a(href='/aquamotion')
