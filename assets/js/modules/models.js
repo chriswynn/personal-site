@@ -7,7 +7,7 @@ export default function() {
     const modelThreshold = 300
 
     renderer.setSize( window.innerWidth, window.innerHeight )
-    scene.background = new THREE.Color( 0xff0000 );
+    scene.background = new THREE.Color( 0x0c1969 );
     document.body.appendChild( renderer.domElement )
 
     function getRandomInt(min, max) {
@@ -36,30 +36,7 @@ export default function() {
         torus.rotateX(getRandomInt(0, 3.14159))
         torus.rotateY(getRandomInt(0, 3.14159))
         scene.add( torus )
-      } else {
-        function CustomSinCurve( scale ) {
-          THREE.Curve.call( this );
-          this.scale = ( scale === undefined ) ? 1 : scale;
-        }
-        CustomSinCurve.prototype = Object.create( THREE.Curve.prototype );
-        CustomSinCurve.prototype.constructor = CustomSinCurve;
-        CustomSinCurve.prototype.getPoint = function ( t ) {
-          var tx = t * 3 - 1.5;
-          var ty = Math.sin( 2 * Math.PI * t );
-          var tz = 0;
-          return new THREE.Vector3( tx, ty, tz ).multiplyScalar( this.scale );
-        };
-        var path = new CustomSinCurve( 10 );
-        var geometry = new THREE.TubeGeometry( path, 20, 2, 8, false );
-        var material = new THREE.MeshPhongMaterial( { color: randomColor } );
-        var mesh = new THREE.Mesh( geometry, material );
-        mesh.translateX(getRandomInt(-200, 200))
-        mesh.translateY(getRandomInt(-200, 200))
-        mesh.translateZ(getRandomInt(-200, 200))
-        mesh.rotateX(getRandomInt(0, 3.14159))
-        mesh.rotateY(getRandomInt(0, 3.14159))
-        scene.add( mesh );
-      }
+      } 
     }
 
     var light = new THREE.AmbientLight( 0xf300ff ); // soft white light
