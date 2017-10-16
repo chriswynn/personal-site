@@ -2,32 +2,68 @@ canvas
   left: 0
   position: fixed
   top: 0
+  z-index: 1
 
 .hero
   align-items: center
-  background: rgba(0,0,0,0)
   display: flex
   flex-direction: column
-  height: 100vh
-  margin: 0 auto
+  height: 90vh
+  margin: 5vh 5vw
+  padding: 50px
   position: relative
   justify-content: center
-  max-width: 1200px
+  width: 90vw
   z-index: 10
   & h1
-    background-color: #000000
+    color: #ffffff
+    font-size: 4.0625rem
     margin-bottom: 10px
     padding: 10px
-    text-align: center
-    text-transform: uppercase
-  & h2
-    background-color: #000000
-    margin-bottom: 10px
-    padding: 10px
-    text-align: center
-    text-transform: uppercase
 
 .projects
   height: 200vh
   margin: 0 auto
   max-width: 1200px
+  position: relative
+  z-index: 10
+  & h2
+    text-align: center
+  & a
+    text-decoration: none
+
+.project-row
+  display: flex
+  flex-direction: row
+  height: 500px
+  justify-content: space-around
+  margin-bottom: 50px
+  width: 100%
+
+.project
+  background-size: cover
+  box-shadow: 10px 10px 59px 0px rgba(0,0,0,0.75)
+  //border: 10px solid #000000
+  height: 100%
+  width: 45%
+  z-index: 10
+  &:nth-child(1)
+    background-image: url('../img/aquamotion.png')
+  &:nth-child(2)
+    background-image: url('../img/hcsc.jpg')
+
+.project-title
+  align-items: center
+  display: flex
+  height: 100%
+  justify-content: center
+  position: relative
+  width: 45%
+  & h1
+
+.overlay
+  background: rgba(248, 23, 255, .4)
+  height: 100%
+  position: relative
+  width: 100%
+  z-index: 15
