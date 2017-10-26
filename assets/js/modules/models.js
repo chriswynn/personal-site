@@ -1,63 +1,82 @@
-var THREE = require('three')
+import * as THREE from 'three'
+import GetRandomInt from './helpers/getRandomInt'
+import HeroAnimation from './heroAnimation'
 
-export default function() {
-    const scene = new THREE.Scene()
-    const camera = new THREE.PerspectiveCamera( 75, window.innerWidth/window.innerHeight, 0.1, 1000 )
-    const renderer = new THREE.WebGLRenderer()
-    const modelThreshold = 300
+const scene = new THREE.Scene()
+const camera = new THREE.PerspectiveCamera( 75, window.innerWidth/window.innerHeight, 0.1, 1000 )
+const renderer = new THREE.WebGLRenderer()
 
-    renderer.setSize( window.innerWidth, window.innerHeight )
-    scene.background = new THREE.Color( 0x0c1969 );
-    document.body.appendChild( renderer.domElement )
+const bLow = -300
+const bHigh = 300
 
-    function getRandomInt(min, max) {
-      min = Math.ceil(min)
-      max = Math.floor(max)
-      return Math.floor(Math.random() * (max - min)) + min
-    }
+let latestScrollY = 0 ,
+  ticking = false
 
-    for(let i = 0; i <= modelThreshold; i++) {
-      let randomColor =  '#' + (Math.random()*0xFFFFFF<<0).toString(16);
-      if(i < 100) {
-        var geometry = new THREE.SphereGeometry( 20, 20, 20 )
-        var material = new THREE.MeshPhongMaterial( {color: randomColor} )
-        var sphere = new THREE.Mesh( geometry, material )
-        sphere.translateX(getRandomInt(-200, 200))
-        sphere.translateY(getRandomInt(-200, 200))
-        sphere.translateZ(getRandomInt(-200, 200))
-        scene.add( sphere )
-      } else if(i >= 100 && i < 200) {
-        var geometry = new THREE.TorusGeometry( 10, 3, 16, 100 );
-        var material = new THREE.MeshPhongMaterial( {color: randomColor} )
-        var torus = new THREE.Mesh( geometry, material )
-        torus.translateX(getRandomInt(-200, 200))
-        torus.translateY(getRandomInt(-200, 200))
-        torus.translateZ(getRandomInt(-200, 200))
-        torus.rotateX(getRandomInt(0, 3.14159))
-        torus.rotateY(getRandomInt(0, 3.14159))
-        scene.add( torus )
-      } 
-    }
-
-    var light = new THREE.AmbientLight( 0xf300ff ); // soft white light
-    scene.add( light );
-
-    var light = new THREE.AmbientLight( 0x404040 ); // soft white light
-    scene.add( light );
-
-    var directionalLight = new THREE.DirectionalLight( 0x0085ff, 3)
-    scene.add( directionalLight )
-
-    camera.position.z = window.scrollY
-
-    var animate = function () {
-      window.addEventListener('scroll', function() {
-        camera.position.z = window.scrollY / 4
-      })
-      requestAnimationFrame( animate )
-      renderer.render(scene, camera)
-    };
-
-    animate()
+function generateCanvas() {
+  renderer.setSize(window.innerWidth, window.innerHeight)
+  scene.background = new THREE.Color(0x0c1969)
+  document.body.appendChild(renderer.domElement)
+  camera.position.z = window.scrollY
 }
 
+function generateLights() {
+  const light = new THREE.AmbientLight( 0xFF3844 )
+  scene.add( light )
+
+  const light2 = new THREE.AmbientLight( 0xffffff )
+  scene.add( light2 )
+}
+
+function generateModels(modelThreshold) {
+  for(let i = 0; i <= modelThreshold; i++) {
+    let randomColor =  '#' + (Math.random()*0xFFFFFF<<0).toString(16)
+    if (i < modelThreshold / 2) {
+      var geometry = new THREE.SphereGeometry( 20, 20, 20 )
+      var material = new THREE.MeshPhongMaterial( {color: randomColor} )
+      var sphere = new THREE.Mesh( geometry, material )
+      sphere.translateX(GetRandomInt(bLow, bHigh))
+      sphere.translateY(GetRandomInt(bLow, bHigh))
+      sphere.translateZ(GetRandomInt(bLow, bHigh))
+      scene.add( sphere )
+    } else if (i >= (modelThreshold / 2) && i < modelThreshold) {
+      var geometry = new THREE.TorusGeometry( 10, 3, 16, 100 );
+      var material = new THREE.MeshPhongMaterial( {color: randomColor} )
+      var torus = new THREE.Mesh( geometry, material )
+      torus.translateX(GetRandomInt(bLow, bHigh))
+      torus.translateY(GetRandomInt(bLow, bHigh))
+      torus.translateZ(GetRandomInt(bLow, bHigh))
+      torus.rotateX(GetRandomInt(0, 3.14159))
+      torus.rotateY(GetRandomInt(0, 3.14159))
+      scene.add( torus )
+    }
+  }
+
+  generateLights()
+  renderer.render(scene, camera)
+}
+
+function onScroll() {
+  latestScrollY = window.scrollY
+  requestTick()
+}
+
+function requestTick() {
+  if(!ticking) {
+    requestAnimationFrame(animate)
+  }
+  ticking = true
+}
+
+function animate() {
+  ticking = false
+  let currentScrollY = latestScrollY
+  camera.position.z = currentScrollY / 4
+  HeroAnimation(currentScrollY)
+  renderer.render(scene, camera)
+}
+
+export default function() {
+  generateCanvas()
+  generateModels(100)
+  window.addEventListener('scroll', onScroll )
+}
