@@ -8,6 +8,15 @@
   <section class='projects'>
     <h1>Projects</h1>
     <div class='project-container'>
+      <each loop='project in dato.project'>
+        <a href={{project.slug}} class='project'>
+          <div class='overlay'></div>
+          <div class='project-title'>
+            <h2>{{ project.title }}</h2>
+            <small>{{ project.tag }}</small>
+          </div>
+        </a>
+      </each>
     </div>
   </section>
   </block>
