@@ -8,10 +8,9 @@ const env = process.env.NODE_ENV
 
 module.exports = {
   devtool: 'source-map',
-  matchers: { html: '*(**/)*.sgr', css: '*(**/)*.sss' },
-  ignore: ['**/layout.sgr', '**/_*', '**/.*', 'readme.md', 'yarn.lock'],
+  matchers: { html: '*(**/)*.html', css: '*(**/)*.sss' },
+  ignore: ['**/layout.html', '**/_*', '**/.*', 'readme.md', 'yarn.lock'],
   reshape: htmlStandards({
-    parser: sugarml,
     locals: (ctx) => { return { pageId: pageId(ctx), foo: 'bar' } },
     minify: env === 'production'
   }),

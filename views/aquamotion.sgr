@@ -1,4 +1,0 @@
-extends(src='layout.sgr')
-  block(name='content')
-    div(class='image-section')
-    div(class='description')
