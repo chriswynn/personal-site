@@ -23,8 +23,9 @@ canvas
     position: fixed
 
 .projects
-  height: 200vh
   margin: 0 auto
+  margin-bottom: 200px
+  margin-top: 200px
   max-width: 1200px
   position: relative
   z-index: 10
@@ -32,11 +33,11 @@ canvas
     position: relative
     text-decoration: none
 
-.project-row
+.project-container
   display: flex
   flex-direction: row
-  height: 500px
-  margin-bottom: 20px
+  flex-wrap: wrap
+  height: 350px
   width: 100%
 
 .project
@@ -47,9 +48,8 @@ canvas
   width: 50%
   transition: transform .3s ease
   z-index: 10
-  &:hover
-    transform: scale(1.09)
-    z-index: 20
+  & small
+    text-transform: uppercase
   &:nth-child(1)
     background-image: url('../img/aquamotion.png')
   &:nth-child(2)

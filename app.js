@@ -2,7 +2,6 @@ const htmlStandards = require('reshape-standard')
 const cssStandards = require('spike-css-standards')
 const jsStandards = require('spike-js-standards')
 const pageId = require('spike-page-id')
-const sugarml = require('sugarml')
 const sugarss = require('sugarss')
 const env = process.env.NODE_ENV
 const SpikeDatoCMS = require('spike-datocms')
