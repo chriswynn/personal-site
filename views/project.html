@@ -1,7 +1,12 @@
 <extends src='layout.html'>
   <block name='content'>
-    <h1>{{ item.title }}</h1>
-    <p>{{ item.description }}</p>
+    <div class='project-container'>
+      <div class='project-description'>
+        <h1>{{ item.title }}</h1>
+        <p>{{ item.description }}</p>
+      </div>
+      <div class='image-container'>
+      </div>
+    </div>
   </block>
 </extends>
-
