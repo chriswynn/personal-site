@@ -21,6 +21,8 @@ canvas
     margin-bottom: 10px
     max-width: 80%
     position: fixed
+    @media (max-width: 500px)
+      font-size: 2rem
 
 .projects
   margin: 0 auto
@@ -29,6 +31,13 @@ canvas
   max-width: 1200px
   position: relative
   z-index: 10
+  @media (max-width: 500px)
+    margin-left: 5px
+    margin-right: 5px
+  & h1
+    @media (max-width: 500px)
+      font-size: 3rem
+      margin-bottom: 5px
   & a
     position: relative
     text-decoration: none
@@ -48,6 +57,10 @@ canvas
   width: 50%
   transition: transform .3s ease
   z-index: 10
+  @media (max-width: 500px)
+    height: 200px
+    margin-bottom: 5px
+    width: 100%
   & small
     text-transform: uppercase
 
@@ -58,9 +71,14 @@ canvas
   z-index: 15
   & h2
     margin-bottom: 5px
+    @media (max-width: 500px)
+      font-size: 1rem
+      margin-bottom: 0px
   & small
     color: #fff
     text-decoration: none
+    @media (max-width: 500px)
+      font-size: .6rem
 
 .overlay
   background: rgba(100, 12, 159, .5)
