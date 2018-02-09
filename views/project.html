@@ -6,6 +6,9 @@
         <p>{{ item.description }}</p>
       </div>
       <div class='image-container'>
+        <each loop='image in item.projectImages'>
+          <img src={{`https://www.datocms-assets.com${image.path}`}} >
+        </each>
       </div>
     </div>
   </block>

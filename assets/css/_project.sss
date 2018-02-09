@@ -8,7 +8,7 @@
   padding: 4rem
   position: fixed
   top: 0
-  width: 50vw
+  width: 40vw
   & h1
     font-size: 3rem
   & p
@@ -16,9 +16,18 @@
     font-size: 1.2rem
 
 .image-container
-  background: rgba(255, 255, 255, 0.5)
-  min-height: 200vh
+  align-items: center
+  background: rgba(255, 255, 255, 0.6)
+  display: flex
+  flex-direction: column
+  min-height: 100vh
   position: absolute
   right: 0
   top: 0
-  width: 50vw
+  width: 60vw
+  & img
+    box-shadow: 10px 10px 59px 0px rgba(0,0,0,0.75)
+    margin-bottom: 15px
+    width: 90%
+    &:first-child
+      margin-top: 15px
