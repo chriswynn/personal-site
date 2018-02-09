@@ -36,7 +36,7 @@ function generateLights () {
 
 function generateModels (modelThreshold) {
   for (let i = 0; i <= modelThreshold; i++) {
-    let randomColor = '#' + (Math.random() * 0xFFFFFF<<0).toString(16)
+    let randomColor = `#${Math.random().toString(16).slice(2, 8)}`
     if (i < modelThreshold / 2) {
       let geometry = new THREE.SphereGeometry(20, 20, 20)
       let material = new THREE.MeshPhongMaterial({color: randomColor})
