@@ -39,9 +39,36 @@ canvas
       font-size: 3rem
       margin-bottom: 5px
   & a
-    height: 350px
+    background-size: cover
+    box-shadow: 10px 10px 59px 0px rgba(0,0,0,0.75)
+    display: block
+    height: 100%
     position: relative
     text-decoration: none
+    transition: .3s cubic-bezier(0.45, 0.12, 0.12, 1.1)
+    z-index: 20
+
+.project-sticky
+  position: sticky
+  top: 15%
+
+.project-fly-back
+  animation: .5s ease flyBack forwards
+
+@keyframes flyBack
+  from
+    transform: scale(1)
+  to
+    transform: scale(.3)
+
+.project-fly-forward
+  animation: .5s ease flyForward forwards
+
+@keyframes flyForward
+  from
+    transform: scale(.3)
+  to
+    transform: scale(1) 
 
 .project-container
   display: flex
@@ -49,16 +76,15 @@ canvas
   flex-wrap: wrap
   width: 100%
 
-.project
+.project-wrapper
   background-size: cover
-  box-shadow: 10px 10px 59px 0px rgba(0,0,0,0.75)
   //border: 10px solid #000000
-  height: 100%
+  height: 350px
   width: 50%
   transition: transform .3s ease
   z-index: 10
   @media (max-width: 700px)
-    height: 200px
+    height: 350px
     margin-bottom: 5px
     width: 100%
   & small
@@ -68,6 +94,7 @@ canvas
   bottom: 10px
   left: 10px
   position: absolute
+  width: 300px
   z-index: 15
   & h2
     margin-bottom: 5px
@@ -86,7 +113,6 @@ canvas
   position: relative
   width: 100%
   z-index: 15
-
 footer
   align-items: center
   border-top-left-radius: 10px

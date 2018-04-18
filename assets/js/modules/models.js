@@ -1,6 +1,7 @@
 import * as THREE from 'three'
 import GetRandomInt from './helpers/getRandomInt'
 import HeroAnimation from './heroAnimation'
+import ProjectScroll from './projectScroll'
 
 const ios = !!navigator.platform && /iPad|iPhone|iPod/.test(navigator.platform)
 
@@ -79,6 +80,7 @@ function animate () {
   let currentScrollY = latestScrollY
   camera.position.z = currentScrollY / 4
   HeroAnimation(currentScrollY)
+  ProjectScroll(currentScrollY)
   renderer.render(scene, camera)
 }
 
