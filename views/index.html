@@ -19,5 +19,20 @@
         </each>
       </div>
     </section>
+    <section class='contact'>
+      <h1>Contact Me</h1>
+      <form name="contact" method="POST" netlify>
+        <div>
+        <input type="text" name="name" placeholder='name' />
+        </div>
+        <div>
+          <input type="email" name="email" placeholder='email'/>
+        </div>
+        <div>
+          <textarea name="message" placeholder='message'></textarea>
+        </div>
+        <button type="submit">Send</button>
+      </form>
+    </section>
   </block>
 </extends>
