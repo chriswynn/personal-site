@@ -21,6 +21,9 @@ function generateCanvas () {
   } else {
     renderer.setSize(window.innerWidth, window.innerHeight)
   }
+  window.addEventListener('resize', function () {
+    renderer.setSize(window.innerWidth, window.innerHeight)
+  })
   scene.background = new THREE.Color(0x0c1969)
   document.body.appendChild(renderer.domElement)
   camera.position.z = latestScrollY
