@@ -1,38 +1,4 @@
 <extends src='layout.html'>
   <block name='content'>
-    <section class='hero'>
-      <h1>Hello! I'm Chris Wynn A Creative Front End Developer / Designer</h1>
-    </section>
-    <section class='projects'>
-      <h1>Projects</h1>
-      <div class='project-container'>
-        <each loop='project in dato.project'>
-          <div class='project-wrapper'>
-          <a href={{`/${project.slug}.html`}} class='project' style='background-image:url({{`https://www.datocms-assets.com${project.thumbnail.path}`}})'>
-            <div class='overlay'></div>
-            <div class='project-title'>
-              <h2>{{ project.title }}</h2>
-              <small>{{ project.tag }}</small>
-            </div>
-          </a>
-          </div>
-        </each>
-      </div>
-    </section>
-    <section class='contact'>
-      <h1>Contact Me</h1>
-      <form name="contact" method="POST" netlify>
-        <div>
-        <input type="text" name="name" placeholder='name' />
-        </div>
-        <div>
-          <input type="email" name="email" placeholder='email'/>
-        </div>
-        <div>
-          <textarea name="message" placeholder='message'></textarea>
-        </div>
-        <button type="submit">Send</button>
-      </form>
-    </section>
   </block>
 </extends>
